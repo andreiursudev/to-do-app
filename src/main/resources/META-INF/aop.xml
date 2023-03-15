@@ -1,0 +1,12 @@
+<aspectj>
+    <aspects>
+        <concrete-aspect name="org.todoapp.MyMethodExecutionAspect" extends="org.stackreporter.aspect.MethodExecutionAspect">
+            <pointcut name="methodExecution" expression="execution(* org.todoapp.todo..*(..))"/>
+        </concrete-aspect>
+        <concrete-aspect name="org.todoapp.MyMethodCallAspect" extends="org.stackreporter.aspect.MethodCallAspect">
+            <pointcut name="methodCall" expression="call(* org.todoapp.todo..*(..))"/>
+        </concrete-aspect>
+    </aspects>
+    <weaver options="-Xlint:ignore">
+    </weaver>
+</aspectj>
